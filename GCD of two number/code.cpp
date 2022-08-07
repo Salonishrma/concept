@@ -1,8 +1,21 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+#include <iostream>
 
-\f0\fs24 \cf0 cfggh}
+using namespace std;
+int n1,n2;
+int gcd(int n1,int  n2){
+int ans=min(n1,n2);
+while(ans>0){
+    if(n1%ans==0 && n2%ans==0){
+        break;
+    }
+    ans--;
+}
+return ans;
+}
+int main(){
+    int a;
+    int b;
+    cin>>a>>b;
+    cout<<"gcd is equal to "<<gcd(a,b)<<endl;
+    return 0;
+}

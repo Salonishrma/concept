@@ -1,6 +1,28 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+
+#include <bits/stdc++.h>
+
+using namespace std;
+int power_calculate(int base, int power)
+{
+    if (power== 0){
+        return 1;
+    }
+    else{
+        return (base*power_calculate(base, power-1));
+    };
+}
+int main()
+{
+    int base, power;
+
+    cout << "Enter base: ";
+    cin >> base;
+
+    cout << "Enter power: ";
+    cin >> power;
+
+    int ans = power_calculate(base, power);
+    cout << base << "^" << power << " = " << ans;
+
+    return 0;
 }

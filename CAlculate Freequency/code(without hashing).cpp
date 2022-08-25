@@ -1,6 +1,33 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+#include <iostream> 
+using namespace std;
+
+void countFrequency(int *arr, int size)
+{ 
+    for (int i = 0; i < size; i++)
+    {
+        int flag = 0; int count = 0;
+        for (int j = i+1; j < size; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                flag = 1; 
+                break;
+            }
+        }
+        if (flag == 1) 
+        continue;
+        for(int j = 0;j<=i;j++)
+        {
+            if(arr[i]==arr[j])
+            count +=1;
+ }
+    cout << arr[i] << ": " << count << endl;
+    }
+}
+int main()
+{
+    int arr[] = {5, 8, 5, 7, 8, 10};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    countFrequency(arr, size);
+    return 0;
 }
